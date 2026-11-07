@@ -1,0 +1,211 @@
+.main {
+    /* Padding atas mengimbangi navbar fixed */
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+}
+
+/* Header Halaman */
+.pageHeader {
+    margin-bottom: 5rem;
+    border-bottom: 1px solid var(--border-hairline);
+    padding-bottom: 2.5rem;
+}
+
+.mainTitle {
+    font-family: var(--font-display), sans-serif;
+    font-size: 16rem;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+    color: var(--text-primary);
+}
+
+/* Grid Profil (Bio + Foto) */
+.profileGrid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-bottom: 7rem;
+}
+
+.statement {
+    font-family: var(--font-display), sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.bioText {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.bioText strong {
+    color: var(--text-primary);
+}
+
+/* Frame Foto Profil */
+.portraitWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: var(--bg-secondary);
+    overflow: hidden;
+}
+
+.portrait {
+    object-fit: cover;
+}
+
+/* Section Pengalaman & Disiplin */
+.sectionBlock {
+    margin-bottom: 6rem;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid var(--border-dark);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    font-family: var(--font-display), sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.sectionTag {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Tabel Linimasa */
+.table {
+    display: flex;
+    flex-direction: column;
+}
+
+.tableRow {
+    display: grid;
+    grid-template-columns: 220px 1fr 120px;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border-hairline);
+    align-items: baseline;
+}
+
+.colYear {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.colRole {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.roleTitle {
+    font-family: var(--font-display), sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.companyName {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.colLoc {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+    text-align: right;
+}
+
+/* Grid Keahlian */
+.disciplinesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.disciplineItem {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-hairline);
+    background-color: var(--bg-secondary);
+}
+
+.disciplineNo {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.disciplineText {
+    font-family: var(--font-display), sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* Responsif Mobile */
+@media (max-width: 860px) {
+    .profileGrid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    /* Gambar pindah ke posisi ATAS */
+    .imageColumn {
+        order: 1;
+        width: 100%;
+        max-width: 420px;
+        /* Menjaga ukuran foto tetap proporsional dan tidak terlalu raksasa di HP */
+        margin: 0 auto;
+        /* Posisi foto pas di tengah layar mobile */
+    }
+
+    /* Bio teks berada di BAWAH gambar */
+    .bioColumn {
+        order: 2;
+    }
+
+    .statement {
+        font-size: 1.45rem;
+    }
+
+    /* Penyesuaian tabel linimasa di HP */
+    .tableRow {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .colLoc {
+        text-align: left;
+        color: var(--text-muted);
+    }
+
+    .mainTitle {
+        font-size: 4rem;
+    }
+}

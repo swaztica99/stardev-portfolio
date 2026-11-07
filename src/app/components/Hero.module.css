@@ -1,0 +1,86 @@
+/* Container Hero (Desktop Default) */
+.heroWrapper {
+    width: 100%;
+    padding: 6.5rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.artboard {
+    position: relative;
+    width: 100%;
+    max-width: var(--container-max);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #1600f7;
+    border-radius: 9px;
+}
+
+.imageLayer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bgImage {
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%) contrast(150%);
+    opacity: 0.15;
+    mix-blend-mode: overlay;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    user-select: none;
+    padding: 0 1rem;
+}
+
+.brandTitle {
+    font-family: var(--font-display), sans-serif;
+    font-size: clamp(3.8rem, 15vw, 13rem);
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registeredMark {
+    font-family: var(--font-display), sans-serif;
+    font-size: 0.38em;
+    font-weight: 800;
+    margin-left: 0.12em;
+    transform: translateY(-0.15em);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================================================
+   TAMPILAN FULL DI LAYAR MOBILE (<= 768px)
+======================================================== */
+@media (max-width: 768px) {
+
+    .artboard {
+        /* Penuh 100% layar HP tanpa border radius */
+        height: 50%;
+        border-radius: 9px;
+        width: 100%;
+    }
+
+    .brandTitle {
+        /* Skala pas memenuhi lebar layar HP tanpa terpotong */
+        font-size: clamp(3.2rem, 16vw, 5.5rem);
+    }
+}

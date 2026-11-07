@@ -1,0 +1,38 @@
+.footer {
+    padding: 4.5rem 0 3.5rem 0;
+    border-top: 1px solid var(--border-hairline);
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+/* Posisi media sosial tepat di tengah */
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.socials a {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.socials a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+    .footer {
+        padding: 3rem 0;
+    }
+
+    .socials {
+        gap: 1.5rem;
+    }
+}

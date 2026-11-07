@@ -1,34 +1,25 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #fbfbfb;
+  --bg-secondary: #f0f0f0;
+  --text-primary: #0f0f0f;
+  --text-muted: #666666;
+  --text-subtle: #999999;
+  --border-hairline: #dcdcdc;
+  --border-dark: #0f0f0f;
+  --container-max: 1280px;
 }
 
+/* Dark mode otomatis (opsional) atau default monochrome light */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --text-primary: #f5f5f5;
+    --text-muted: #999999;
+    --text-subtle: #555555;
+    --border-hairline: #222222;
+    --border-dark: #f5f5f5;
   }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -37,13 +28,44 @@ body {
   margin: 0;
 }
 
+/* Update di src/app/globals.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hairline rule divider */
+.hairline {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-hairline);
+  margin: 0;
 }

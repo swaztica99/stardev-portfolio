@@ -1,0 +1,157 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.5rem 0;
+    background-color: rgba(251, 251, 251, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-hairline);
+}
+
+@media (prefers-color-scheme: dark) {
+    .header {
+        background-color: rgba(10, 10, 10, 0.85);
+    }
+}
+
+.bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.brand {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 900;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    z-index: 101;
+    transition: 0.2s;
+    /* Selalu di atas overlay */
+}
+
+.brand:hover {
+    opacity: 50%;
+}
+
+/* Nav Desktop */
+.desktopNav {
+    display: flex;
+    gap: 2rem;
+}
+
+.desktopNav a {
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
+.desktopNav a:hover {
+    color: var(--text-primary);
+}
+
+/* Tombol Hamburger (2 Bar Minimalis) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 32px;
+    height: 32px;
+    z-index: 101;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+/* Animasi Hamburger ke Silang (X) */
+.hamburger.active .line:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Mobile Overlay Menu */
+.mobileMenu {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    background-color: var(--bg-primary);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8rem 2rem 3rem 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobileMenu.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.mobileNav a {
+    font-family: var(--font-display), sans-serif;
+    font-size: clamp(2.5rem, 8vw, 3.8rem);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--border-hairline);
+    padding-bottom: 1rem;
+}
+
+.menuIndex {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.mobileFooter {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-hairline);
+    padding-top: 1.5rem;
+}
+
+/* Breakpoint Mobile */
+@media (max-width: 768px) {
+    .desktopNav {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}

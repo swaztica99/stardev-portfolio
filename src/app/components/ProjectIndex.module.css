@@ -1,0 +1,90 @@
+.section {
+    padding: 6rem 0 8rem 0;
+}
+
+/* Container Judul Tengah */
+.headerCentered {
+    text-align: center;
+    margin-bottom: 4.5rem;
+    /* Memberikan ruang napas yang lega ke garis list */
+}
+
+/* Tipografi Judul PROJECTS */
+.heading {
+    font-family: var(--font-display), sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    /* Skala responsif yang besar & tegas */
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    /* Tight tracking modern */
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+/* Garis pembatas atas list proyek */
+.list {
+    border-top: 1px solid var(--border-hairline);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.2rem 0;
+    border-bottom: 1px solid var(--border-hairline);
+    transition: opacity 0.2s ease;
+}
+
+.item:hover {
+    opacity: 0.45;
+}
+
+.left {
+    display: flex;
+    align-items: baseline;
+    gap: 2.5rem;
+}
+
+.no {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.title {
+    font-family: var(--font-display), sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.arrow {
+    color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+    .headerCentered {
+        margin-bottom: 2.5rem;
+    }
+
+    .right {
+        gap: 1.5rem;
+    }
+
+    .role {
+        display: none;
+    }
+
+    .title {
+        font-size: 0.80rem;
+    }
+}
