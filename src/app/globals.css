@@ -22,25 +22,35 @@
   }
 }
 
-* {
+/* Tambahkan / Ganti bagian atas src/app/globals.css */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  padding: 0;
+  /* Mencegah padding menambah lebar elemen */
   margin: 0;
+  padding: 0;
 }
 
-/* Update di src/app/globals.css */
-
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* Kunci mutlak agar layar tidak goyang ke samping */
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* Kunci body */
+  position: relative;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -59,7 +69,9 @@ button {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
+  /* Padding tepi layar HP yang aman */
+  box-sizing: border-box;
 }
 
 /* Hairline rule divider */
